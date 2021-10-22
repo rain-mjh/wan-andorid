@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.rain.wan_andorid.fragment.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_project"
+        android:name="com.rain.wan_andorid.fragment.project.ProjectFragment"
+        android:label="@string/title_project"
+        tools:layout="@layout/fragment_project" />
+
+    <fragment
+        android:id="@+id/navigation_tree"
+        android:name="com.rain.wan_andorid.fragment.tree.TreeFragment"
+        android:label="@string/title_tree"
+        tools:layout="@layout/fragment_tree"/>
+
+    <fragment
+        android:id="@+id/navigation_nav"
+        android:name="com.rain.wan_andorid.fragment.nav.NavFragment"
+        android:label="@string/title_nav"
+        tools:layout="@layout/fragment_nav"/>
+
+    <fragment
+        android:id="@+id/navigation_chapter"
+        android:name="com.rain.wan_andorid.fragment.chapter.ChapterFragment"
+        android:label="@string/title_chapter"
+        tools:layout="@layout/fragment_chapter"/>
+
+</navigation>
