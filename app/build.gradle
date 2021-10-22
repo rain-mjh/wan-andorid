@@ -16,12 +16,28 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    signingConfigs {
+        config {
+            storeFile file("face.jks") // 需要修改成您的签名文件路径
+            storePassword '123456'        // 需要修改成您的签名文件密码
+            keyAlias 'face'     // 需要修改成您的签名文件别名
+            keyPassword '123456'  // 需要修改成您的签名文件别名密码
         }
     }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -31,6 +47,14 @@ android {
         enabled=true
     }
 
+}
+android.applicationVariants.all { variant ->
+    variant.outputs.all {
+        outputFileName = "rain_${variant.buildType.name}_${variant.versionCode}_${variant.versionName}_${packageTime()}.apk"
+    }
+}
+def packageTime() {
+    return new Date().format("yyyyMMddHHmm")
 }
 
 dependencies {

@@ -35,7 +35,6 @@ public class ArticleAdapter  extends BaseQuickAdapter<ArticleEntity.DataBean.Dat
         TextView tx_date=baseViewHolder.findView(R.id.tx_date);
         RelativeLayout web_layout=baseViewHolder.findView(R.id.web_layout);
 
-
         tx_title.setText(datasBean.getTitle());
         if (datasBean.getSuperChapterName().isEmpty() || datasBean.getAuthor().isEmpty()){
             tx_chapter.setVisibility(View.GONE);

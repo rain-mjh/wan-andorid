@@ -12,8 +12,14 @@
     <color name="un_sel">#707070</color>
     <color name="sel">#FE6243</color>
 
+    <color name="tab_col">#f4f4f4</color>
+
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorPrimary">#008577</color>
     <color name="colorAccent">#FE6243</color>
+
+    <color name="txt">#666666</color>
+
+    <color name="txt1">#25c6fc</color>
 
 </resources>

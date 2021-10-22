@@ -4,6 +4,7 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 /**
  * retrofit
@@ -35,6 +36,17 @@ public interface NetServer {
     //热门网站
     @GET("/friend/json")
     Call<ResponseBody>  getFriend();
+
+    //项目分类
+    @GET("/project/tree/json")
+    Call<ResponseBody> getProject();
+
+    //项目列表
+    @GET("/project/list/{pageNum}/json")
+    Call<ResponseBody> getProjectList(@Path("pageNum") int pageNum,@Query("cid") int cid);
+
+
+
 
     @GET("/wxarticle/chapters/json")
     Call<ResponseBody> getWabData();
