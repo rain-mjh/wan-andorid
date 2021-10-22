@@ -42,8 +42,12 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    //navigation
     implementation 'androidx.navigation:navigation-fragment:2.2.2'
     implementation 'androidx.navigation:navigation-ui:2.2.2'
+
+    //banner
+    implementation 'com.youth.banner:banner:1.4.10'  //最新版本
 
     //圆角
     implementation 'de.hdodenhof:circleimageview:3.1.0'
@@ -77,5 +81,12 @@ dependencies {
     //QMUI
     implementation 'com.qmuiteam:qmui:2.0.0-alpha10'
 
+    //webview
+    implementation 'com.github.Justson.AgentWeb:agentweb-core:v4.1.9-androidx' // (必选)
+    implementation 'com.github.Justson.AgentWeb:agentweb-filechooser:v4.1.9-androidx' // (可选)
+    implementation 'com.github.Justson:Downloader:v4.1.9-androidx' // (可选)
 
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'//Retrofit依赖
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'//可选依赖，解析json字符所用
 }
