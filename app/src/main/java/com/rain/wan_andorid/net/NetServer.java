@@ -45,6 +45,14 @@ public interface NetServer {
     @GET("/project/list/{pageNum}/json")
     Call<ResponseBody> getProjectList(@Path("pageNum") int pageNum,@Query("cid") int cid);
 
+    //体系结构
+    @GET("/tree/json")
+    Call<ResponseBody> getTreeList();
+
+    // 体系下的文章
+    @GET("/article/list/{pageNum}/json")
+    Call<ResponseBody> getTreeDetail(@Path("pageNum") int pageNum,@Query("cid") int cid);
+
 
 
 

@@ -3,14 +3,15 @@
     package="com.rain.wan_andorid">
 
     <application
+        android:name=".base.MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".base.MyApp"
         android:theme="@style/Theme.Wanandorid">
-        <activity android:name=".activity.web.WebActivity"></activity>
+        <activity android:name=".fragment.tree.ui.TreeDetailActivity"></activity>
+        <activity android:name=".activity.web.WebActivity" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

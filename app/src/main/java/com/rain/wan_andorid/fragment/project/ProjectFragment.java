@@ -27,6 +27,7 @@ public class ProjectFragment extends BaseFragment implements IProjectView {
 
     ProjectAdapter adapter;
 
+
     @Override
     protected int setContentView() {
         return R.layout.fragment_project;

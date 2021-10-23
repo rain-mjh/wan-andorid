@@ -20,6 +20,7 @@ import java.util.List;
 public class ProjectItemAdapter extends BaseQuickAdapter<ProjectItemEntity.DataBean.DatasBean , BaseViewHolder> {
 
     ProjectItemView itemView;
+
     public ProjectItemAdapter(int layoutResId,  @NotNull List<ProjectItemEntity.DataBean.DatasBean> data, ProjectItemView itemView) {
         super(layoutResId,data);
         this.itemView=itemView;

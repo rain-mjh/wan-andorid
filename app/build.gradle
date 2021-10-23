@@ -46,6 +46,10 @@ android {
     dataBinding{
         enabled=true
     }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
 
 }
 android.applicationVariants.all { variant ->
