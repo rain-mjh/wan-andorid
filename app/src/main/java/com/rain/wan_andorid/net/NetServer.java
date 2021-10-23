@@ -53,6 +53,10 @@ public interface NetServer {
     @GET("/article/list/{pageNum}/json")
     Call<ResponseBody> getTreeDetail(@Path("pageNum") int pageNum,@Query("cid") int cid);
 
+    //导航
+    @GET("/navi/json")
+    Call<ResponseBody> getNavi();
+
 
 
 

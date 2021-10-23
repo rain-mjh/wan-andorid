@@ -117,4 +117,11 @@ dependencies {
     //retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'//Retrofit依赖
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'//可选依赖，解析json字符所用
+
+    //tabLayout 垂直布局
+    implementation 'q.rorbin:VerticalTabLayout:1.2.5'
+
+    //viewpager 垂直布局
+    implementation 'cn.youngkaaa:yviewpager:0.4'
+
 }
