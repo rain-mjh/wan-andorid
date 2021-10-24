@@ -2,6 +2,9 @@ package com.rain.wan_andorid.base;
 
 import android.app.Application;
 
+import com.tencent.bugly.Bugly;
+import com.tencent.bugly.beta.Beta;
+
 import retrofit2.Retrofit;
 
 public class MyApp  extends Application {
@@ -11,6 +14,8 @@ public class MyApp  extends Application {
     public void onCreate() {
         super.onCreate();
         myApp=this;
+
+        initBugly();
     }
 
 
@@ -25,4 +30,11 @@ public class MyApp  extends Application {
     public static MyApp getInstance(){
         return myApp;
     }
+
+    private void initBugly() {
+        Beta.showInterruptedStrategy = true;
+
+        Bugly.init(getApplicationContext(), "0c4b909568", true);
+    }
+
 }
