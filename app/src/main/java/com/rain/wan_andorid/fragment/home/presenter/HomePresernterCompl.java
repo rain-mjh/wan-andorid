@@ -62,7 +62,7 @@ public class HomePresernterCompl implements IHomePresenter {
        iHome.getArticleList(pageNum, new ACallback<String>() {
            @Override
            public void onSuccess(String data) {
-               Log.e("xxx",data);
+             //  Log.e("xxx",data);
 
                ArticleEntity articleEntity=new Gson().fromJson(data, ArticleEntity.class);
                iHomeView.getArticleList(articleEntity.getData());

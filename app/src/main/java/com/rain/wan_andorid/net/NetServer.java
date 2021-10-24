@@ -57,14 +57,19 @@ public interface NetServer {
     @GET("/navi/json")
     Call<ResponseBody> getNavi();
 
-
-
-
+    //公众号
     @GET("/wxarticle/chapters/json")
-    Call<ResponseBody> getWabData();
+    Call<ResponseBody> getChaptersList();
 
+    //公众详情
     @GET("/wxarticle/list/{chapters_id}/{page}/json")
     Call<ResponseBody> getWxarticle(@Path("chapters_id") int chapters_id, @Path("page") int page);
+
+
+    //公众详情
+    @GET("/wxarticle/list/{chapters_id}/{page}/json")
+    Call<ResponseBody> getChaptersDetail(@Path("chapters_id") int chapters_id, @Path("page") int page);
+
 
     @GET("/sentences")
     Call<ResponseBody> getSentences();

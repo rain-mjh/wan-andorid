@@ -62,9 +62,10 @@ public class TreeDetailAdapter extends FragmentPagerAdapter {
         String plateName = names.get(position);
         if (plateName == null) {
             plateName = "";
-        } else if (plateName.length() > 15) {
-            plateName = plateName.substring(0, 15) + "...";
+        } else if (plateName.length() > 20) {
+            plateName = plateName.substring(0, 20) + "...";
         }
+        plateName=plateName.toLowerCase();
         return plateName;
     }
 }

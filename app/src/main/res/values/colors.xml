@@ -22,4 +22,10 @@
 
     <color name="txt1">#25c6fc</color>
 
+    <color name="chapter_c1">#9dd3fa</color>
+    <color name="chapter_c2">#f7f7d0</color>
+    <color name="chapter_c3">#ffc09f</color>
+    <color name="chapter_c4">#a0d8de</color>
+    <color name="chapter_c5">#e2dbbe</color>
+    <color name="chapter_c6">#eae1f0</color>
 </resources>

@@ -25,7 +25,7 @@ public class NaviPresenterComl implements INaviPresenter {
         iNavi.getNaviList(new ACallback<String>() {
             @Override
             public void onSuccess(String data) {
-                Log.e("xx",data);
+               // Log.e("xx",data);
 
                 NaviEntity entity=new Gson().fromJson(data,NaviEntity.class);
                 if (entity.getErrorCode()==0){

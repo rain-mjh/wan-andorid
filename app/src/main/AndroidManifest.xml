@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Wanandorid">
-        <activity android:name=".fragment.tree.ui.TreeDetailActivity"></activity>
+        <activity android:name=".fragment.chapter.ui.ChapterItemActivity"></activity>
+        <activity android:name=".fragment.tree.ui.TreeDetailActivity" />
         <activity android:name=".activity.web.WebActivity" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>

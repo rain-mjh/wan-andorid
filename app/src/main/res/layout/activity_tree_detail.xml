@@ -15,6 +15,7 @@
         app:tabBackground="@color/tab_col"
         app:tabPaddingStart="5dp"
         app:tabIndicatorHeight="2dip"
+        app:tabTextAppearance="@style/TabTextAppearance"
         app:tabMode="scrollable"
         app:tabPaddingEnd="5dp"
         app:tabIndicatorFullWidth="false"

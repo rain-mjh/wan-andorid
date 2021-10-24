@@ -35,7 +35,7 @@ public class HomeFragment  extends BaseFragment implements IHomeView {
 
     ArticleAdapter articleAdapter;
 
-    int page=1;
+    int page=0;
 
     SmartRefreshLayout smartRefreshLayout;
 
@@ -75,7 +75,7 @@ public class HomeFragment  extends BaseFragment implements IHomeView {
         smartRefreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-                page = 1;
+                page = 0;
                 homePresernterCompl.getArticleList(page);
                 refreshLayout.finishRefresh(1000);//下拉刷新结束
             }
@@ -110,7 +110,7 @@ public class HomeFragment  extends BaseFragment implements IHomeView {
         List<ArticleEntity.DataBean.DatasBean>   datasBeanList=articleEntityList.getDatas();
            if (datasBeanList.size()>0){
                Log.e("xxx",datasBeanList.size()+"列表");
-               if (page>1){
+               if (page>0){
                    for (ArticleEntity.DataBean.DatasBean data:datasBeanList){
                        articleList.add(data);
                    }

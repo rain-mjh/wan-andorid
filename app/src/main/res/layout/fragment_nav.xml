@@ -6,17 +6,14 @@
 
     <q.rorbin.verticaltablayout.VerticalTabLayout
         android:id="@+id/vTab"
-        android:layout_alignParentLeft="true"
-        android:layout_width="120dp"
+        android:layout_width="110dp"
         android:layout_height="match_parent"
         android:background="@color/tab_col"
         app:tabBackground="@color/tab_col"
-        app:tabPaddingStart="5dp"
         app:tabIndicatorHeight="2dip"
         app:tab_mode="scrollable"
         app:tabPaddingEnd="5dp"
         app:tab_height="@dimen/dp_40"
-        app:tabIndicatorFullWidth="false"
         app:tabIndicatorColor="@color/theme"
         app:tab_margin="3dp"
         app:tabSelectedTextColor="@color/theme"

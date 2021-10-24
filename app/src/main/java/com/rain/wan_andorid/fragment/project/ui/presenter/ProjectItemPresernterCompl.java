@@ -27,7 +27,7 @@ public class ProjectItemPresernterCompl implements IProjectItemPresenter {
         iProjectItem.getProjectList(page, cid, new ACallback<String>() {
             @Override
             public void onSuccess(String data) {
-                Log.e("xxx",data);
+                //Log.e("xxx",data);
                 ProjectItemEntity entity=new Gson().fromJson(data,ProjectItemEntity.class);
                 if (entity.getErrorCode()==0){
                     projectItemView.getProjectItemList(entity.getData().getDatas());

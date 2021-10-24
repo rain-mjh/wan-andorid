@@ -1,9 +1,11 @@
 package com.rain.wan_andorid.fragment.tree.ui;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -19,6 +21,8 @@ import com.rain.wan_andorid.fragment.tree.ui.adapter.TreeDetailAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.icu.lang.UCharacter.toLowerCase;
+
 public class TreeDetailActivity extends AppCompatActivity {
 
 
@@ -32,6 +36,7 @@ public class TreeDetailActivity extends AppCompatActivity {
 
     List<TreeEntity.DataBean.ChildrenBean> dataBeans;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,8 +50,11 @@ public class TreeDetailActivity extends AppCompatActivity {
 
         for (TreeEntity.DataBean.ChildrenBean bean:datalist){
             dataBeans.add(bean);
-            names.add(bean.getName());
+
+            names.add(toLowerCase(bean.getName()));
         }
+
+        Log.e("xxx",names.toString());
         initData();
     }
 
@@ -60,6 +68,7 @@ public class TreeDetailActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
 
         tabLayout.setupWithViewPager(viewPager);
+
         adapter.setList(names,dataBeans);
     }
 }

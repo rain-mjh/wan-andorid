@@ -26,7 +26,7 @@ public class ProjectItemModel implements IProjectItem{
                         String body=response.body().string();
                         callback.onSuccess(body);
 
-                        Log.e("xxx",response.body().string());
+                        //Log.e("xxx",response.body().string());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

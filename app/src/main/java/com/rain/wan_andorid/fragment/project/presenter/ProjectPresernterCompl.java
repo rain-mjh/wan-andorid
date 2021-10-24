@@ -25,7 +25,7 @@ public class ProjectPresernterCompl implements IProjectPresenter {
         iProject.getProject(new ACallback<String>() {
             @Override
             public void onSuccess(String data) {
-                Log.e("xxx",data);
+                //Log.e("xxx",data);
                 ProjectEntity entity=new Gson().fromJson(data,ProjectEntity.class);
                 if (entity.getErrorCode()==0){
                     iProjectView.getProject(entity.getData());

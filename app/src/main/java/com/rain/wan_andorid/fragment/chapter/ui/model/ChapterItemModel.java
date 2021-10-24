@@ -1,6 +1,4 @@
-package com.rain.wan_andorid.fragment.project.model;
-
-import android.util.Log;
+package com.rain.wan_andorid.fragment.chapter.ui.model;
 
 import com.rain.wan_andorid.base.MyApp;
 import com.rain.wan_andorid.common.ACallback;
@@ -13,31 +11,28 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ProjectModel implements IProject {
-
+public class ChapterItemModel implements IChapterItem {
     @Override
-    public void getProject(ACallback<String> callback) {
-        Call<ResponseBody> call=MyApp.retrofit(NetServer.api).create(NetServer.class).getProject();
+    public void getChapterItemList(int cid, int page, ACallback<String> aCallback) {
+        Call<ResponseBody> call = MyApp.retrofit(NetServer.api).create(NetServer.class).getChaptersDetail(cid, page);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.code()==200){
                     try {
                         String body=response.body().string();
-                        callback.onSuccess(body);
-
-                        //Log.e("xxx",response.body().string());
+                        aCallback.onSuccess(body);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }else {
-                    callback.onFail(response.code(),response.message());
+                    aCallback.onFail(500,response.message());
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                callback.onFail(500,t.getMessage());
+                aCallback.onFail(500,t.getMessage());
             }
         });
     }

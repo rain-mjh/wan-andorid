@@ -30,7 +30,7 @@ public class ProjectItemFragment extends BaseFragment  implements ProjectItemVie
 
     RecyclerView recycler;
 
-    int page=1;
+    int page=0;
 
     SmartRefreshLayout smartRefreshLayout;
 
@@ -45,7 +45,7 @@ public class ProjectItemFragment extends BaseFragment  implements ProjectItemVie
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.e("XX","进入fragment");
+       // Log.e("XX","进入fragment");
 
         Bundle bundle = getArguments();
         name = bundle.getString("name");
@@ -88,7 +88,7 @@ public class ProjectItemFragment extends BaseFragment  implements ProjectItemVie
         smartRefreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-                page = 1;
+                page = 0;
                 compl.getProjectList(page,chat_id);
                 refreshLayout.finishRefresh(1000);//下拉刷新结束
             }
@@ -111,7 +111,7 @@ public class ProjectItemFragment extends BaseFragment  implements ProjectItemVie
             Toast.makeText(getContext(),"没有更多数据了",Toast.LENGTH_SHORT).show();
             return;
         }
-        if (page>1){
+        if (page>0){
             for (ProjectItemEntity.DataBean.DatasBean data:datasBean){
                 datasBeanList.add(data);
             }
