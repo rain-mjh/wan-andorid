@@ -14,6 +14,17 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            //选择要添加的对应 cpu 类型的 .so 库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "0cac8f23f9d624893c16a019", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
     }
 
     signingConfigs {
@@ -89,8 +100,7 @@ dependencies {
     //FastJson
     implementation 'com.alibaba:fastjson:1.2.58'
 
-    //gson
-    implementation 'com.google.code.gson:gson:2.8.6'
+
 
     //万能适配器
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
@@ -109,6 +119,8 @@ dependencies {
     //QMUI
     implementation 'com.qmuiteam:qmui:2.0.0-alpha10'
 
+
+
     //webview
     implementation 'com.github.Justson.AgentWeb:agentweb-core:v4.1.9-androidx' // (必选)
     implementation 'com.github.Justson.AgentWeb:agentweb-filechooser:v4.1.9-androidx' // (可选)
@@ -121,7 +133,17 @@ dependencies {
     //tabLayout 垂直布局
     implementation 'q.rorbin:VerticalTabLayout:1.2.5'
 
+
     //viewpager 垂直布局
     implementation 'cn.youngkaaa:yviewpager:0.4'
+
+
+    //bugly
+    implementation 'com.tencent.bugly:crashreport_upgrade:latest.release'//其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.2.0
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.2.0
+
+    //jiguang
+    implementation 'cn.jiguang.sdk:jcore:2.7.2'  // 此处以JCore 2.7.2 版本为例。
+    implementation 'cn.jiguang.sdk:jpush:4.0.0'  // 此处以JPush 4.0.0 版本为例
 
 }

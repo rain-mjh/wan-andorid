@@ -1,7 +1,15 @@
 package com.rain.wan_andorid.base;
 
-import android.app.Activity;
 
-public class BaseActivity  extends Activity {
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class BaseActivity  extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
 }

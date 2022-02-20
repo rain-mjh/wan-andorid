@@ -10,30 +10,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Wanandorid">
-        <activity android:name=".fragment.chapter.ui.ChapterItemActivity"></activity>
-        <activity android:name=".fragment.tree.ui.TreeDetailActivity" />
-        <activity android:name=".activity.web.WebActivity" />
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".web.MuiWebActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".fragment.chapter.ui.ChapterItemActivity" />
+        <activity android:name=".fragment.tree.ui.TreeDetailActivity" />
+        <activity android:name=".activity.web.WebActivity" />
+        <activity android:name=".activity.MainActivity">
 
-        <!-- 腾讯bugly自动更新 -->
+        </activity> <!-- 腾讯bugly自动更新 -->
         <activity
             android:name="com.tencent.bugly.beta.ui.BetaActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|locale"
             android:theme="@android:style/Theme.Translucent" />
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- 8.0以上 安装未知来源应用权限 -->
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
